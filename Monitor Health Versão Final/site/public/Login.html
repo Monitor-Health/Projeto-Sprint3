@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../Vetores/icone.png">
+    <link rel="stylesheet" href="./css/Login.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Área do Cliente</title>
+</head>
+
+<body class="corpo">
+    <div class="centro">
+        <div class="container">
+
+            <!-- começa fundo azul -->
+            <div class="cadastrar">
+                <img src="../Vetores/tech_esq.svg" width="250px" style="margin-top: 20px;">
+                <div class="centro_logo">
+                    <img class="logo" src="../Vetores/logo_vacsense SEM FUNDO.png" width="250px">
+                    <p style="margin-left: 39px; color: #363636;" class="texto_cadastrado">Ainda não tem Cadastro?</p>
+                    <a href="../Cadastro.html"><button style="margin-left: 62px;" class="botao">Cadastre-se</button></a>
+                </div>
+                <img src="../Vetores/tech_dir.svg" width="250px" style="margin-top: 130px; margin-left: 200px; ">
+            </div>
+            <!-- termina fundo azul -->
+            <!-- termina fundo cinza -->
+            <div class="login">
+                <a href="../index.html"><img src="../Vetores/monitor_logo_azul.png" width="100px"
+                        style="margin-left: 500px; margin-top: 25px;"></a>
+                <div class="centro_login">
+                    <h3 style="color: #363636; margin-left: 37%;">Login</h3>
+
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                        <img src="../Vetores/mail.svg" width="20px" style="margin-top: -1px; margin-right: -83px;">
+                        <input class="input" type="email" placeholder="E-mail" id="input_email"><br>
+                    </div>
+
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                        <img src="../Vetores/lock.svg" width="20px" style="margin-top: -1px; margin-right: -85px;">
+                        <input class="input" type="password" placeholder="Senha" id="input_senha"><br>
+                    </div>
+
+                    <button onclick="login()" class="botao" style="margin-left: 34%;">Entrar</button>
+                </div>
+
+                <h6 style="margin-left: 480px; margin-top: 100px;">© 2023 Monitor Health</h6>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function login() {
+        var email = input_email.value;
+        var senha = input_senha.value;
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: email,
+                senhaServer: senha
+            })
+        }).then(function (resposta) {
+            if (resposta.ok) {
+                resposta.json().then(json => {
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.PERMISSAO = json.fkPermissao;
+                    window.location = 'dashboard/dashboard.html';
+                });
+
+            } else {
+                resposta.text().then(texto => {
+                    Swal.fire({
+                        title: 'E-mail e/ou senha inválidos',
+                        icon: 'error',
+                        timer: 3000, // Tempo de exibição do toast em milissegundos
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false
+                    })
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+</script>

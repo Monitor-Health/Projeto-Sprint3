@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+
+.corpo{
+margin: 0;
+padding: 0;
+font-family: 'Montserrat', sans-serif;
+}
+
+.centro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    margin-top: 15px;
+}
+
+.container{
+    background-color: #fafafa;
+    width: 90%;
+    height: 500px;
+    border-radius: 30px;
+    display: flex;
+    box-shadow: 52px 44px 79px -41px rgba(184,184,184,1);
+
+}
+
+.cadastrar{
+    background-color: #BDCEDB;
+    width: 40%;
+    height: 500px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.centro_logo{
+    margin-left: 90px;
+}
+
+
+.texto_cadastrado{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: smaller;
+}
+
+.logo{
+    margin-top: 120px;
+    margin-bottom: -8px;
+}
+
+.botao{
+    background-color: #1e3a4e;
+    border-radius: 33px;
+    border: 0;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 13px;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.centro_login{
+    margin-left: 22%;
+    margin-top: 15%;
+}
+
+.input {
+    width: 330px;
+    margin: 0 auto;
+    padding: 10px;
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 40px;
+    background-color: #E8E8E8;
+    margin-top: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: #2e6284;
+    transition: all 0.2s linear;
+}
+
+a:hover{
+    color: #2e6284;
+    transition: .3s;
+}
+
+.botao:hover {
+    background-color: rgba(75, 75, 75, 0.426);
+    transition: .3s;
+    color: white;
+    opacity: .4;
+}

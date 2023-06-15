@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../Vetores/icone.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/Monitor_Health.css" />
+    <title>Monitor Health</title>
+</head>
+
+<body>
+    <aside class="aside-navbar">
+        <div class="aside-div-navbar">
+            <a href="#home">
+                <img class="arrow" src="../Vetores/seta.png" alt="">
+            </a>
+        </div>
+    </aside>
+
+    <div id="fade"></div>
+    <div class="alling_floating">
+        <button onclick="open_modal()" class="floating">$ Faça seu Orçamento</button>
+    </div>
+
+    <!-- header -->
+    <div class="fundo">
+        <div id="home" class="header">
+            <div class="container">
+                <a href="../index.html"><img src="../Vetores/logo_monitor_health_branco.svg" width="180px"
+                        class="logo"></a>
+                <ul class="navbar">
+                    <li><a href="../index.html">Página Inicial</a></li>
+                    <li><a href="../Vac_Sense.html">VacSense</a></li>
+                    <li><a href="../Simulador_Financeiro.html">Simulador</a></li>
+                    <li><a href="../Cadastro.html">Cadastro</a></li>
+                    <li><a href="https://monitorhealthatendimento.freshdesk.com/support/home">Suporte</a></li>
+                    <a href="../Login.html"><button class="botao_cliente">Área do
+                            Cliente</button></a>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- fim header -->
+
+    <main style="margin-bottom: -85px;">
+        <section class="home">
+            <div class="main-section-home">
+                <img src="../Vetores/icon_conexao.svg" width="350px"
+                    style="margin-left: -25px; margin-top: 30px; margin-bottom: 10px;"><br>
+                <img class="background-home" src="../Vetores/icon_medicamento_verde.svg">
+            </div>
+            <aside>
+                <div style="margin-left: -700px;">
+                    <h1 class="title-home">Automatize sua operação e Reduza custos com IoT</h1>
+                    <p class="text-home">
+                        Reduzir custos, agilizar processos, ter controle sobre os dados em tempo real para tomadas de
+                        decisões mais assertivas.
+                    </p>
+                </div>
+                <div style="margin-left: -550px;">
+                    <div class="budget-home">
+                        <a href="../Simulador_Financeiro.html"><button class="botao_cliente">Calcule sua
+                                Economia</button></a>
+                        <img class="calculator-home" src="../Vetores/calc.png" alt="">
+                    </div>
+                </div><br><br>
+            </aside>
+    </main>
+
+    <div>
+        <img src="../Vetores/icon_conexao_esquerda.svg" width="350px" style="margin-left: 1025px; margin-top: -40px;">
+    </div><br>
+    </main>
+
+    <div id="about" style="width: auto; height: 600px; display: flex; align-items: center; justify-content: center;">
+        <div>
+            <div>
+                <img src="../Vetores/vetor_tech.svg" width="350px" style="margin-left: -15px; margin-top: 30px; ">
+            </div><br><br>
+
+            <div style="width: 600px; margin-left: 120px; margin-top: -25px;">
+                <h1 class="title-about">Quem somos?</h1>
+                <p class="text-about">
+                    A Monitor Health é uma empresa de tecnologia com foco em IoT (Internet das Coisas), com o objetivo
+                    principal de desenvolver soluções simples e efetivas para problemas de armazenamento e segurança em
+                    áreas da saúde.
+                </p>
+                <p class="text-about">
+                    Coletamos e analisamos dados de ambientes ou equipamentos para transformá-los em resultados de fácil
+                    análise, de forma prática, escalável, simples, eficiente e de baixo custo. Isso proporciona sempre
+                    uma otimização e redução dos custos mensais de manutenção e consumo.
+                </p>
+
+                <img src="../Vetores/icon_conexao_esquerda.svg" width="350px" style="margin-left: 430px;">
+            </div>
+
+        </div>
+
+        <div>
+            <img src="../Vetores/img_vacina_1.jpg" width="480px" height="600px"
+                style="margin-left: 150px; margin-bottom: -33px;">
+        </div>
+    </div>
+
+    <section class="squad" style="margin-top: 15px;">
+        <img src="../Vetores/redemuinho.svg" style="margin-left: -950px; margin-bottom: -500px;">
+        <h3 class="h3_squad"
+            style="font-family: 'Montserrat', sans-serif; font-weight: 700; margin-top: 30px; margin-bottom: 20px;">
+            Nossa equipe</h3>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper content">
+                <div class="swiper-slide card">
+                    <div class="card-content">
+
+                        <div class="image">
+                            <img src="../Vetores/carlos.jpg" alt="">
+                        </div>
+
+                        <div class="media-icons">
+                            <i href="https://github.com/CarlosHBenecke" class="fa-brands fa-github"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+
+                        <div class="name-profession">
+                            <span class="name">Carlos Benecke</span>
+                            <span class="profession">Web Developer</span>
+                        </div>
+
+                        <div class="rating">
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide card">
+                    <div class="card-content">
+
+                        <div class="image">
+                            <img src="../Vetores/danielle.jpg" alt="">
+                        </div>
+
+                        <div class="media-icons">
+                            <i href="https://github.com/DanielleRomano" class="fa-brands fa-github"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+
+                        <div class="name-profession">
+                            <span class="name">Danielle Romano</span>
+                            <span class="profession">Web Developer</span>
+                        </div>
+
+                        <div class="rating">
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide card">
+                    <div class="card-content">
+
+                        <div class="image">
+                            <img src="../Vetores/nicolas.jpg" alt="">
+                        </div>
+
+                        <div class="media-icons">
+                            <i class="fa-brands fa-github" href="https://github.com/nicolas-prates"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+
+                        <div class="name-profession">
+                            <span class="name">Nicolas Prates</span>
+                            <span class="profession">Web Developer</span>
+                        </div>
+
+                        <div class="rating">
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide card">
+                    <div class="card-content">
+
+                        <div class="image">
+                            <img src="../Vetores/samuel.jpg" alt="">
+                        </div>
+
+                        <div class="media-icons">
+                            <i class="fa-brands fa-github" href="https://github.com/SamLucena"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+
+                        <div class="name-profession">
+                            <span class="name">Samuel Lucena</span>
+                            <span class="profession">Web Developer</span>
+                        </div>
+
+                        <div class="rating">
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide card">
+                    <div class="card-content">
+
+                        <div class="image">
+                            <img src="../Vetores/thaisa.jpg" alt="">
+                        </div>
+
+                        <div class="media-icons">
+                            <i class="fa-brands fa-github" hre="https://github.com/nobregathsa"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+
+                        <div class="name-profession">
+                            <span class="name">Thaisa Nobrega</span>
+                            <span class="profession">Web Developer</span>
+                        </div>
+
+                        <div class="rating">
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide card">
+                    <div class="card-content">
+
+                        <div class="image">
+                            <img src="../Vetores/vanessa.jpg" alt="">
+                        </div>
+
+                        <div class="media-icons">
+                            <i class="fa-brands fa-github" href="https://github.com/VanessaMAquino"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+
+                        <div class="name-profession">
+                            <span class="name">Vanessa Aquino</span>
+                            <span class="profession">Web Developer</span>
+                        </div>
+
+                        <div class="rating">
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                            <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <!--<div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>-->
+        </div>
+    </section>
+
+    <br><br>
+    <section id="tecnologias" style="width: auto; margin-bottom: -100px;">
+        <img src="../Vetores/icon_conexao.svg" width="350px">
+        <img class="circuit-tools" src="../Vetores/Firmware-amico 1.png" width="200px" style="margin-top: -450px;">
+
+        <div class="content-about" style="margin-top: -70px; margin-left: 25px;">
+            <h1 class="title-tools">Tecnologias</h1>
+            <p style="margin-top: -15px;" class="text-tools">
+                O conceito da Internet das Coisas (IoT) se
+                refere a revolução tecnológica que já vem
+                acontecendo no mundo atual. Tem como objetivo conectar itens usados
+                no dia-a-dia à rede mundial de computadores e ampliar suas funcionalidades.
+                A cada dia surgem mais dispositivos e produtos conectados à Internet
+                e outros dispositivos, como celulares e smartphones, o que faz com que você
+                tenha acesso a tudo de onde estiver. É pensando em toda essa usabilidade e potencial
+                que a Monitor Health traz à vida os dispositivo certo para cada necessidade do ambiente.
+            </p>
+
+            <div style="margin-top: -50px;" class="content-tools">
+                <img class="circuit-tools2" src="../Vetores/Computer troubleshooting-amico 1.png" width="300px">
+                <div id="content-about">
+                    <h1 class="title-about">Soluções</h1>
+                    <p style="margin-top: 20px;" class="text-tools2">
+                        Soluções simples e efetivas para otimizar a gestão dos dados e insumos na sua empresa
+                        através de tecnologia IoT (Internet das Coisas).
+                    </p>
+                </div>
+    </section>
+
+    <div>
+        <img src="../Vetores/icon_conexao_esquerda.svg" width="350px" style="margin-left: 1025px; margin-top: -90px;">
+    </div>
+
+    <div style="background-color: white; width: auto; height: 50px;">
+
+        <!-- <a href="../Monitor Health + VacSense/Vac_Sense.html">
+            <div class="botao_cliente"
+                style=" background-color: #0f5c60; margin-left: 550px; width: 200px; height: 60px; border-radius: 50px; margin-top: 30px;">
+
+                <div style=" margin-top: -17px; display: flex; justify-content: center; align-items: center;">
+                    <h4 style="color: #ffffff;">Conheça o</h4>
+                </div>
+
+
+                <div style="margin-top: -20px; display: flex; justify-content: center; align-items: center;">
+                    <img src="../Vetores/logo_vacsense_branco.svg" width="200px"
+                        style="margin-top: -55px; margin-left: 5px;">
+                </div>
+
+            </div>
+        </a> -->
+    </div>
+
+    <!-- footer  -->
+    <footer id="footer" style="background-color: #6eada7; width: auto; height: 310px;"><br>
+        <div style="display: flex; align-items: center;">
+            <div style="margin-left: 250px;">
+                <div style="line-height: 5px;">
+                    <h3 style="color: #0a3e41;">Menu</h3><br>
+                    <div style="color: #ffffff; margin-top: -10px; margin-bottom: 30px;">
+                        <a href="../index.html">
+                            <p>Página Inicial</p>
+                        </a>
+                        <a href="#tecnologias">
+                            <p>Tecnologias</p>
+                        </a>
+                        <a href="../Vac_Sense.css">
+                            <p>VacSense</p>
+                        </a>
+                        <a href="../Simulador_Financeiro.html">
+                            <p>Simulador</p>
+                        </a>
+                        <a href="../Cadastro.html">
+                            <p>Cadastro</p>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <a href="../index.html"><img src="../Vetores/logo_monitor_health_branco.svg" width="200x"></a>
+                </div>
+            </div>
+
+            <div style="margin-left: 250px;">
+                <div style="line-height: 5px;">
+                    <h3 style="color: #0a3e41;">Endereço</h3><br>
+                    <div style="display: flex; align-items: center; margin-top: -10px;">
+                        <div> <img src="../Vetores/localização.png" width="20px"></div>
+                        <div>
+                            <p style="color: #ffffff; margin-left: 10px;">Rua Haddock Lobo, 595 São Paulo - SP</p>
+                        </div>
+                    </div>
+
+                    <h3 style="color: #0a3e41;">Contato</h3><br>
+                    <div style="display: flex; align-items: center; margin-top: -10px;">
+                        <div> <img src="../Vetores/telefone.png" width="18px"></div>
+                        <div>
+                            <p style="color: #ffffff; margin-left: 10px;">(11) 2145-0400</p>
+                        </div>
+                    </div><br>
+                    <div style="display: flex; align-items: center; margin-top: -10px;">
+                        <div> <img src="../Vetores/email.png" width="25px"></div>
+                        <div>
+                            <p style="color: #ffffff; margin-left: 10px;">atendimentomonitorhealth@gmail.com</p>
+                        </div>
+                    </div>
+
+
+                    <h3 style="color: #0a3e41;">Redes Sociais</h3><br>
+                    <div style="display: flex; align-items: center; margin-top: -10px;">
+                        <div> <img src="../Vetores/facebook.png" width="30px"></div>
+                        <div> <img style=" margin-left: 10px;" src="../Vetores/instagram.png" width="30px"></div>
+                        <div> <img style=" margin-left: 10px;" src="../Vetores/linkedin.png" width="30px"></div>
+                        <h5 style="color: #0a3e41; margin-left: 250px;">© 2023 Monitor Health</h5>
+                    </div><br>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <script src="./js/funcoes.js"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+
+        function open_modal() {
+            fade.innerHTML = `
+    <div class="hide">
+    <div class="hide2">
+
+        <div class="modal" style="margin-top: 15px;">
+            <button onclick="close_modal()" style=" margin-left: 330px; width: 20px; height: 20px; border-radius: 50%; border: none; background-color: #0f5c60; cursor: pointer; color: white;">X</button>
+        
+        <h2 style="margin-left: 10px;" class="modal-header">Orçamento</h2>
+        
+        <p class="modal-body">Peça seu orçamento e vamos entrar em contato o mais rápido possível!</p>
+    
+
+        <form>
+        <input id="input_responsavel" type="name" class="colocar" placeholder="Nome do Responsável"><br>
+        <input id="input_empresa" type="name" class="colocar" placeholder="Nome da Empresa"><br>
+        <input id="input_telefone" type="number" class="colocar" placeholder="Telefone"><br>
+        <input id="input_email" type="email" class="colocar" placeholder="E-mail"><br>
+        </form>
+        
+        <button onclick="sendMail()" class="floating">Peça seu orçamento</button>
+    </div>
+    </div>
+</div>
+    `
+        }
+
+        function close_modal() {
+            fade.innerHTML = " "
+        }
+    </script>
+    
+
+</body>
+
+</html>

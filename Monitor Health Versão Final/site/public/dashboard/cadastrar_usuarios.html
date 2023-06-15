@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src2/style-cadastro.css">
+    <link rel="stylesheet" href="./src2/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/png" href="../Vetores/icone.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Área do Cliente</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="menu-top">
+                <li>
+                    <img class="logo"
+                        src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/logo_vacsense%20SEM%20FUNDO.png?raw=true"
+                        alt="Logo">
+                </li>
+                <li>
+                    <a href="dashboard.html">
+                        <img class="icon"
+                            src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/icone_grafico.svg?raw=true"
+                            alt="Dashboard">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="cadastrar_usuarios.html">
+                        <img class="icon"
+                            src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/icone_usuario.svg?raw=true"
+                            alt="Usuários">
+                        Usuários
+                    </a>
+                </li>
+            </ul>
+            <ul class="menu-bottom">
+                <li>
+                    <a href="#" onclick="limparSessao()">
+                        <img class="icon"
+                            src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/icone_sair.svg?raw=true"
+                            alt="Sair">
+                        Sair
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- <main> tag HTML que indica o conteúdo principal de uma página -->
+    <main class="container">
+        <div style="display: flex; align-items: center; justify-content: center;" class="dash">
+            <!-- div do cadstrro -->
+            <div>
+                <header>
+                    <div>
+                        <h1 class="titulo-cadastro">Cadastrar Usuários</h1>
+                    </div>
+                </header>
+
+                <div class="usuario">
+                 
+                </div>
+                <div class="centro_cadastro">
+                    <select required id="select_permissao" class="input"
+                        style="width: 400px; font-size: 22px; height: 50px; margin-left: 53px; color: #757575;">
+                        <option value="" disabled selected>Permissão</option>
+                        <option value="1">Administrador</option>
+                        <option value="2">Básico</option>
+                    </select><br>
+                </div>
+
+                <div class="centro_cadastro">
+                    <input required class="input"
+                        style="margin-left: 53px; font-size: 22px; width: 400px; height: 50px;" type="email"
+                        id="input_email" placeholder="E-mail">
+                </div>
+
+                <div style="margin-bottom: 8px;" class="centro_cadastro">
+                    <input required class="input"
+                        style="margin-left: 53px; font-size: 22px; width: 400px; height: 50px;" type="password"
+                        id="input_senha" placeholder="Senha">
+                </div>
+
+                <div style="margin-top: -15px;" class="centro_cadastro">
+                    <button href="#div_1"
+                        style="font-size: 22px; width: 200px; height: 50px; padding: 10px 25px; margin-top: 15px; margin-left: -160px;"
+                        class="botao_cliente" onclick="cadastrar()">Cadastrar</button>
+                </div>
+
+            </div>
+
+            <!-- div dos usuarios -->
+            <div>
+                <div class="div_cadastro">
+                    <div id="usuarios" class="usuarios">
+                        <h2 style="margin-left: 40px; color: #4d4d4d;">Usuários Cadastrados</h2>
+                        <div id="usuarios_cadastrados"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="profile-usuarios">
+            <img class="photo" src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/foto_perfil.svg?raw=true"
+                alt="Foto de Perfil">
+            <div class="description">
+                <h3 class="profile-name" id="profile-name">Olá, Thaisa</h3>
+                <small id="permission">Administrador</small>
+            </div>
+            <hr class="line">
+            <div class="notification">
+                <span class="notification-text" style="margin-top: 10px;">Faixas</span>
+                <img class="icon" style="margin-left: 300px ;"
+                    src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/icone_notifica%C3%A7%C3%A3o.svg?raw=true"
+                    alt="">
+            </div>
+            <div>
+                <img width="230" style="margin-top: 10px;" src="https://github.com/Monitor-Health/Vetores-Projeto2/blob/main/Menor%202%C2%B0%20(1).jpg?raw=true" alt="">
+            </div>
+        </div>
+    </main>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            if (sessionStorage.length == 0) {
+                window.location = "../index.html";
+            } else if (sessionStorage.getItem("PERMISSAO") != 1) {
+                window.location = "./dashboard.html";
+            }
+            atualizarLista();
+        })
+
+        function cadastrar() {
+            var email = input_email.value;
+            var senha = input_senha.value;
+            var permissao = select_permissao.value;
+            var usuario = {
+                email,
+                senha,
+                permissao
+            }
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(usuario)
+            })
+            atualizarLista(usuario);
+        }
+
+        function atualizarLista(usuario) {
+            if(usuario != undefined){
+                let permissao = ""
+                if(usuario.permissao == 1){
+                    permissao = "Administrador";
+                }else{
+                    permissao = "Básico";
+                }
+                usuarios_cadastrados.innerHTML += `
+                    <div class='usuarios_cadastrados'>
+                        ${usuario.email}<br>
+                        ${permissao}
+                    </div>
+                `;
+                return;
+            }
+            fetch('/usuarios/listar')
+            .then(res => res.json())
+            .then(data => {
+                data.forEach(user => {
+                    let permission = "";
+                    if(user.fkPermissao == 1){
+                        permission = "Administrador";
+                    }else{
+                        permission = "Básico";
+                    }
+                    usuarios_cadastrados.innerHTML += `
+                        <div class='usuarios_cadastrados'>
+                            ${user.email}<br>
+                            ${permission}
+                        </div>
+                    `;
+                })
+            })
+        }
+    </script>
+    <script src="../js/funcoes.js"></script>

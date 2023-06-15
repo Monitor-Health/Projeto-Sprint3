@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../Vetores/icone.png">
+    <link rel="stylesheet" href="./css/Simulador_Financeiro.css">
+    <title>Simulador Fianceiro </title>
+</head>
+
+<body class="body">
+    
+    <div id="fade"></div>
+    <div class="alling_floating">
+        <button onclick="open_modal()" class="floating">$ Faça seu Orçamento</button>
+    </div>
+
+    <aside class="aside-navbar">
+        <div class="aside-div-navbar">
+            <a href="#home">
+                <img class="arrow" src="../Vetores/seta.png" alt="">
+            </a>
+        </div>
+    </aside>
+
+
+    <!-- header -->
+    <div id="home" class="fundo">
+        <div class="header">
+            <div class="container">
+                <a href="../index.html"><img src="../Vetores/monitor-vac.svg" width="250px" class="logo"></a>
+                <ul class="navbar">
+                    <li><a href="../index.html">Página Inicial</a></li>
+                    <li><a href="../Vac_Sense.html">VacSense</a></li>
+                    <li><a href="../Simulador_Financeiro.html">Simulador</a></li>
+                    <li><a href="../Cadastro.html">Cadastro</a></li>
+                    <li><a href="https://monitorhealthatendimento.freshdesk.com/support/home">Suporte</a></li>
+                    <a href="../Login.html"><button class="botao_cliente">Área do Cliente</button></a>
+                </ul>
+            </div>
+        </div>
+    </div><br>
+    <!-- fim header -->
+
+
+
+    <!-- parte tech e logo simulador -->
+    <div style="width: auto; height: auto; display: flex;">
+        <!-- tech -->
+        <div class="vetor_tech">
+            <img src="../Vetores/vetor_tech.svg" width="350px" style="margin-left: -20px; margin-top: 15px;">
+        </div>
+
+        <!-- simulador -->
+        <div class="simulador" style="margin-left: 180px;">
+            <img width="70%" src="../Vetores/logocalc.png">
+        </div>
+    </div><br>
+    <!-- fim -->
+
+
+    <!-- parte medicamentos e inputs e tech -->
+    <div style="width: auto; height: auto; display: flex;">
+        <!-- medicamentos -->
+        <div class="vetor_medicamento">
+            <img src="../Vetores/vetor_medicamentos.svg" width="500px" style="margin-left: -110px; margin-top: 50px;">
+        </div>
+        <!-- inputs do cliente -->
+        <div style="width: auto; height: auto; display: flex; margin-left: 90px;">
+            <div class="fundo_calculadora"><br>
+
+                <h4>Selecione a Vacina:</h4>
+                <select required name="nome da vacina" id="nome_vacina" class="colocar">
+                    <option></option>
+                    <option id="TplcV">Tríplice Viral</option>
+                    <option id="BCG">BCG</option>
+                    <option id="Febre Amarela">Hepatite B</option>
+                    <option id="HPV">Febre Amarela</option>
+                </select><br>
+
+                <h4>Total de Vacinas Armazenadas :</h4>
+                <input required class="colocar" type="number" id="total_vacina"><br>
+
+                <h4>Valor da Unidade da Vacina:</h4>
+                <input required placeholder="R$" type="number" class="colocar" id="valor_vacina"><br><br>
+
+                <a style="text-decoration: none; color: white;" href="#div_1"><button class="botao_cliente"
+                        onclick="ver_economia()">Calcular</button></a>
+                </div><br><br>
+
+            <!-- tech2 -->
+            <div class="vetor_tech">
+                <img src="../Vetores/vetor_tech2.svg" width="350px" style="margin-top: 400px; margin-left: 140px;">
+            </div>
+        </div>
+    </div>
+    <!-- fim -->
+    <div id="div_1">
+
+    </div>
+    </span>
+
+    <p style="padding: 1px; margin-top: -50px;  font-size: small; text-align: center;" >*Segundo pesquisa da SciELO foram observados 12.342 registros; A taxa média de perdas foi de 45,8%.</p>
+    <p style=" font-size: small; text-align: center;" id="oms">*Dados comprovados pela OMS, que
+        garante 75% da redução de gastos e perdas com o monitoramento adequado.</p>
+
+    <div style="background-color: white; width: auto; height: 150px;">
+
+        <a href="./Vac_Sense.html">
+            <div class="botao_cliente"
+                style=" background-color: #f3f3f3; margin-left: 550px; width: 200px; height: 60px; border-radius: 50px; margin-top: 30px;">
+
+                <div style=" margin-top: -17px; display: flex; justify-content: center; align-items: center;">
+                    <h4 style="color: #3e3e3e;">Conheça o</h4>
+                </div>
+
+
+                <div style="margin-top: -20px; display: flex; justify-content: center; align-items: center;">
+                    <img src="../Vetores/logo_vacsense SEM FUNDO.png" width="150px">
+                </div>
+
+            </div>
+        </a>
+    </div>
+ 
+
+
+
+    <!-- footer  -->
+    <footer id="footer" style="width: auto; height: 310px;"><br>
+        <div style="display: flex; align-items: center;">
+            <div style="margin-left: 260px;">
+                <div style="line-height: 5px;">
+                    <h3 style="color: #1a3444;">Menu</h3><br>
+                    <div style="color: #ffffff; margin-top: -10px; margin-bottom: 30px;">
+                        <a href="./index.html"><p>Página Inicial</p></a>
+                        <a href="./index.html"><p>Tecnologias</p></a>
+                        <a href="./Vac_Sense.html"><p>VacSense</p></a>
+                        <a href="./Simulador_Financeiro.html"><p>Simulador</p></a>
+                        <a href="./Cadastro.html"><p>Cadastro</p></a>
+                    </div>
+                </div>
+                <div>
+                    <a href="./index.html"><img src="../Vetores/monitor_logo_azul.png" width="200x"></a>
+                </div>
+            </div>
+
+            <div style="margin-left: 250px;">
+                <div style="line-height: 5px;">
+                    <h3 style="color: #1a3444;">Endereço</h3><br>
+                    <div style="display: flex; align-items: center; margin-top: -10px;">
+                        <div> <img src="../Vetores/localização.png" width="20px"></div>
+                        <div> <p style="color: #ffffff; margin-left: 10px;">Rua Haddock Lobo, 595 São Paulo - SP</p> </div>
+                    </div>
+
+                    <h3 style="color: #1a3444;">Contato</h3><br>
+                    <div style="display: flex; align-items: center; margin-top: -10px;">
+                        <div> <img src="../Vetores/telefone.png" width="18px"></div>
+                        <div> <p style="color: #ffffff; margin-left: 10px;">(11) 2145-0400</p> </div>
+                    </div><br>
+                    <div style="display: flex; align-items: center; margin-top: -10px;">
+                        <div> <img src="../Vetores/email.png" width="25px"></div>
+                        <div> <p style="color: #ffffff; margin-left: 10px;">atendimentomonitorhealth@gmail.com</p> </div>
+                    </div>
+
+
+                    <h3 style="color: #1a3444;">Redes Sociais</h3><br>
+                    <div style="display: flex; align-items: center; margin-top: -10px;">
+                        <div> <img src="../Vetores/facebook.png" width="30px"></div>
+                        <div> <img style=" margin-left: 10px;" src="../Vetores/instagram.png" width="30px"></div>
+                        <div> <img style=" margin-left: 10px;" src="../Vetores/linkedin.png" width="30px"></div>
+                        <h5 style="color: #1e3a4e; margin-left: 250px;">© 2023 Monitor Health</h5> 
+                    </div><br>
+                </div>
+    
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script src="./js/funcoes.js"></script>
+<script>
+    function ver_economia() {
+        var nome = nome_vacina.value
+        var total_vac = Number(total_vacina.value)
+        var valor = Number(valor_vacina.value)
+
+        var perda_vacinas = 0.45 * total_vac
+        var prejuizo = perda_vacinas * valor
+
+        var vacina_poupada = total_vac * 0.75
+        var economia_vacsense = prejuizo * 0.75
+
+        div_1.innerHTML =
+            `
+    <div style="display: flex; align-items: center; justify-content: center; margin-top: -50px;">
+        <div
+            style=" text-align: center; width: 350px; height: 130px; background-color: #fffefe74; border-radius: 35px;">
+            <div>
+                <p>Vacina: ${nome}</p>
+                <p>Total de Vacinas: ${total_vac}</p>
+                <p>Valor da Vacina: ${valor}</p>
+            </div>
+        </div>
+    </div><br><br>
+
+    <div style="display: flex; align-items: center; justify-content: space-around;" >
+        <div style="display: flex; align-items: center; justify-content: center; margin-left: 50px;">
+            <div
+                style=" text-align: center; width: 400px; height: 170px; background-color: #fffefe74; border-radius: 35px;">
+                <div>
+                    <img src="../Vetores/sem.png" width="250px">
+                </div>
+                <div style=" margin-top: -25px;">
+                    <p>Vacinas Perdidas: ${perda_vacinas.toFixed(0)}</p>
+                    <p>Prejuizo p/Mês: R$${prejuizo.toFixed(0)}</p>
+                    <p>Prejuizo p/Ano: R$${prejuizo.toFixed(0) * 12}</p>
+                </div>
+            </div>
+        </div><br>
+
+        <div style="display: flex; align-items: center; justify-content: center; margin-left: -800px;">
+            <div
+                style=" text-align: center; width: 400px; height: 170px; background-color: #fffefe74; border-radius: 35px;">
+                <div>
+                    <img src="../Vetores/com.png" width="250px">
+                </div>
+                <div style=" margin-top: -20px;">
+                <p>Vacinas Poupadas: ${vacina_poupada.toFixed(0)} </p>
+                <p>Economia p/Mês: R$${economia_vacsense.toFixed(0)} </p>
+                <p>Economia p/Ano: R$${economia_vacsense.toFixed(0) * 12}</p>
+                </div>
+            </div>
+        </div>
+    </div><br><br><br><br><br>
+    `
+    }
+
+    function open_modal(){
+    fade.innerHTML = `
+    <div class="hide">
+    <div class="hide2">
+
+        <div class="modal" style="margin-top: 15px;">
+            <button onclick="close_modal()" style=" margin-left: 330px; width: 20px; height: 20px; border-radius: 50%; border: none; background-color: #1a3444; cursor: pointer; color: white;">X</button>
+        
+        <h2 style="margin-left: 10px;" class="modal-header">Orçamento</h2>
+        
+        <p class="modal-body">Peça seu orçamento e vamos entrar em contato o mais rápido possível!</p>
+    
+
+        <form>
+        <input id="input_responsavel" type="name" class="colocar" placeholder="Nome do Responsável"><br>
+        <input id="input_empresa" type="name" class="colocar" placeholder="Nome da Empresa"><br>
+        <input id="input_telefone" type="number" class="colocar" placeholder="Telefone"><br>
+        <input id="input_email" type="e-mail" class="colocar" placeholder="E-mail"><br>
+        </form>
+        
+        <button onclick="sendMail()" class="floating">Peça seu orçamento</button>
+    </div>
+    </div>
+</div>
+    `
+}
+
+function close_modal(){
+    fade.innerHTML = " "
+}
+
+function alert_modal(){
+    alert("Orçamento enviado com sucesso!")
+    fade.innerHTML = " "
+}
+</script>

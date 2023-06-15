@@ -1,0 +1,614 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Line Chart</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+    <style>
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <!-- <h1>Sensor DHT 11 - Umidade</h1>
+        <section style="width:100%">
+            <canvas id="dht11Umidade"></canvas>
+        </section>
+        <h1>Sensor DHT 11 - Temperatura</h1>
+        <section style="width: 100%;">
+            <canvas id="dht11Temperatura"></canvas>
+        </section>
+        <h1>Sensor Luminosidade</h1>
+        <section style="width: 100%;">
+            <canvas id="luminosidade"></canvas>
+        </section> -->
+        <h1>Sensor LM 35 - Temperatura - Freezer 1 (Real) Média Real: <span id="media1"></span></h1>
+        <section style="width: 100%;">
+            <canvas id="lm35Temperatura"></canvas>
+        </section>
+        <h1>Sensor Chave - Freezer 1 (Real)</h1>
+        <section style="width: 100%;">
+            <canvas id="chave"></canvas>
+        </section>
+        <h1>Sensor LM 35 - Temperatura - Freezer 2 (Congelante) Média Congelante: <span id="media2"></span></h1>
+        <section style="width: 100%;">
+            <canvas id="lm35TemperaturaCongelante"></canvas>
+        </section>
+        <h1>Sensor Chave - Freezer 2 (Congelante)</h1>
+        <section style="width: 100%;">
+            <canvas id="chaveCongelante"></canvas>
+        </section>
+        <h1>Sensor LM 35 - Temperatura - Freezer 3 (Derretendo) Média Derretendo <span id="media3"></span></h1>
+        <section style="width: 100%;">
+            <canvas id="lm35TemperaturaDerretendo"></canvas>
+        </section>
+        <h1>Sensor Chave - Freezer 3 (Derretendo)</h1>
+        <section style="width: 100%;">
+            <canvas id="chaveDerretendo"></canvas>
+        </section>
+        <h1>Sensor LM 35 - Temperatura - Freezer 4 (Fria) Média Fria <span id="media4"></span></h1>
+        <section style="width: 100%;">
+            <canvas id="lm35TemperaturaFria"></canvas>
+        </section>
+        <h1>Sensor Chave - Freezer 4 (Fria)</h1>
+        <section style="width: 100%;">
+            <canvas id="chaveFria"></canvas>
+        </section>
+        <h1>Sensor LM 35 - Temperatura - Freezer 5 (Quente) Média Quente <span id="media5"></span></h1>
+        <section style="width: 100%;">
+            <canvas id="lm35TemperaturaQuente"></canvas>
+        </section>
+        <h1>Sensor Chave - Freezer 5 (Quente)</h1>
+        <section style="width: 100%;">
+            <canvas id="chaveQuente"></canvas>
+        </section>
+    </div>
+
+    <script>
+        /* -- dht11Umidade -- */
+       
+        /* -- lm35Temperatura */
+
+        //Adicional Média
+        var soma = 0;
+        var contador = 0;
+
+        var contextoLm35Temperatura = document.getElementById('lm35Temperatura').getContext('2d');
+        var contextoLm35TemperaturaCongelante = document.getElementById('lm35TemperaturaCongelante').getContext('2d');
+        var contextoLm35TemperaturaDerretendo = document.getElementById('lm35TemperaturaDerretendo').getContext('2d');
+        var contextoLm35TemperaturaFria = document.getElementById('lm35TemperaturaFria').getContext('2d');
+        var contextoLm35TemperaturaQuente = document.getElementById('lm35TemperaturaQuente').getContext('2d');
+        
+        contextoLm35Temperatura.canvas.width = 1000;
+        contextoLm35Temperatura.canvas.height = 300;
+
+        contextoLm35TemperaturaCongelante.canvas.width = 1000;
+        contextoLm35TemperaturaCongelante.canvas.height = 300;
+
+        contextoLm35TemperaturaDerretendo.canvas.width = 1000;
+        contextoLm35TemperaturaDerretendo.canvas.height = 300;
+        
+        contextoLm35TemperaturaFria.canvas.width = 1000;
+        contextoLm35TemperaturaFria.canvas.height = 300;
+
+        contextoLm35TemperaturaQuente.canvas.width = 1000;
+        contextoLm35TemperaturaQuente.canvas.height = 300;
+
+        var lm35Temperatura = new Chart(
+            contextoLm35Temperatura,
+            {
+                type: 'line',
+                data: {
+                    datasets: [
+                        {
+                            label: 'Temperatura',
+                            type: 'line',
+                            borderColor: ['#A8C6A8'],
+                            backgroundColor: ["transparent"]
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            distribution: 'series',
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Temperatura'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                }
+            }
+        );
+
+        // Lm35TemperaturaCongelante
+        var lm35TemperaturaCongelante = new Chart(
+            contextoLm35TemperaturaCongelante,
+            {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Temperatura',
+                        type: 'line',
+                        borderColor: ['blue'],
+                        backgroundColor: ["transparent"]
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            distribution: 'series',
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Temperatura'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                }
+            }
+        );
+
+        // Lm35Temperatura Derretendo
+        var lm35TemperaturaDerretendo = new Chart(
+            contextoLm35TemperaturaDerretendo,
+            {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Temperatura',
+                        type: 'line',
+                        borderColor: ['#E8B1B1'],
+                        backgroundColor: ["transparent"]
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            distribution: 'series',
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Temperatura'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                }
+            }
+        );
+
+        //Lm35Temperatura Fria
+        var lm35TemperaturaFria = new Chart(
+            contextoLm35TemperaturaFria,
+            {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Temperatura',
+                        type: 'line',
+                        borderColor: ['#9EB7C2'],
+                        backgroundColor: ["transparent"]
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            distribution: 'series',
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Temperatura'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                }
+            }
+        );
+
+        //Lm35Temperatura Quente
+        var lm35TemperaturaQuente = new Chart(
+            contextoLm35TemperaturaQuente,
+            {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Temperatura',
+                        type: 'line',
+                        borderColor: ['yellow'],
+                        backgroundColor: ["transparent"]
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            distribution: 'series',
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Temperatura'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                }
+            }
+        );
+
+        /* -- chave */
+        var contextoChave = document.getElementById('chave').getContext('2d');
+        var contextoChaveCongelante = document.getElementById('chaveCongelante').getContext('2d');
+        var contextochaveDerretendo = document.getElementById('chaveDerretendo').getContext('2d');
+        
+        var contextoChaveFria = document.getElementById('chaveFria').getContext('2d');
+        var contextochaveQuente = document.getElementById('chaveQuente').getContext('2d');
+
+        contextoChave.canvas.width = 1000;
+        contextoChave.canvas.height = 300;
+        
+        contextoChaveCongelante.canvas.width = 1000;
+        contextoChaveCongelante.canvas.height = 300;
+        
+        contextochaveDerretendo.canvas.width = 1000;
+        contextochaveDerretendo.canvas.height = 300;
+
+        
+        contextoChaveFria.canvas.width = 1000;
+        contextoChaveFria.canvas.height = 300;
+        
+        contextochaveQuente.canvas.width = 1000;
+        contextochaveQuente.canvas.height = 300;
+        var chave = new Chart(
+            contextoChave,
+            {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Chave',
+                        type: 'line',
+                        borderColor: ['#E8E8E8'],
+                        backgroundColor: ["#E8E8E8"]
+                        
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            distribution: 'series',
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Chave'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                }
+            }
+        );
+
+        //Chava Congelante
+        var chaveCongelante = new Chart(
+            contextoChaveCongelante,
+            {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Chave',
+                        type: 'line',
+                        borderColor: ['#E8E8E8'],
+                        backgroundColor: ["#E8E8E8"]
+                        
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            distribution: 'series',
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Chave'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                }
+            }
+        );
+
+        //Chave Derretendo
+        var chaveDerretendo = new Chart(
+            contextochaveDerretendo,
+            {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Chave',
+                        type: 'line',
+                        borderColor: ['#E8E8E8'],
+                        backgroundColor: ["#E8E8E8"]
+                        
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            distribution: 'series',
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Chave'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                }
+            }
+        );
+
+         var chaveCongelante = new Chart(
+            contextoChaveCongelante,
+            {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Chave',
+                        type: 'line',
+                        borderColor: ['#E8E8E8'],
+                        backgroundColor: ["#E8E8E8"]
+                        
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            distribution: 'series',
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Chave'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                }
+            }
+        );
+
+        var chaveFria = new Chart(
+            contextoChaveFria,
+            {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Chave',
+                        type: 'line',
+                        borderColor: ['#E8E8E8'],
+                        backgroundColor: ["#E8E8E8"]
+                        
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            distribution: 'series',
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Chave'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                }
+            }
+        );
+
+        var chaveQuente = new Chart(
+            contextochaveQuente,
+            {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Chave',
+                        type: 'line',
+                        borderColor: ['#E8E8E8'],
+                        backgroundColor: ["#E8E8E8"]
+                        
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            distribution: 'series',
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Chave'
+                            },
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    },
+                    animation: {
+                        duration: 0
+                    }
+                }
+            }
+        );
+        var paginacao = {};
+        var tempo = {};
+        function obterDados(grafico, endpoint) {
+            soma = 0;
+            contador = 0;
+            var http = new XMLHttpRequest();
+            http.open('GET', 'http://localhost:3300/sensores/freezer' + endpoint, false);
+            http.send(null);
+            var valores = JSON.parse(http.responseText);
+            if (paginacao[endpoint] == null) {
+                paginacao[endpoint] = 0;
+            }
+            if (tempo[endpoint] == null) {
+                tempo[endpoint] = 0;
+            }
+            // Exibir à partir do último elemento exibido anteriormente
+            var ultimaPaginacao = paginacao[endpoint];
+            paginacao[endpoint] = valores.length;
+            var valores = valores.slice(ultimaPaginacao);
+            valores.forEach((valor) => {
+                //Máximo de 60 itens exibidos no gráfico
+                if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
+                    grafico.data.labels.shift();
+                    grafico.data.datasets[0].data.shift();
+                }
+
+                grafico.data.labels.push(tempo[endpoint]++);
+                grafico.data.datasets[0].data.push(parseFloat(valor));
+                grafico.update();
+                
+                //Somando os valores
+                soma += valor;
+                contador++;
+            })
+        }
+
+        setInterval(() => {
+            obterDados(lm35Temperatura, '/1/lm35/temperatura');
+            media1.innerHTML = `${soma / contador} °C`;
+            
+            obterDados(lm35TemperaturaCongelante, '/2/lm35/temperatura');
+            media2.innerHTML = `${soma / contador} °C`;
+
+            obterDados(lm35TemperaturaDerretendo, '/3/lm35/temperatura');
+            media3.innerHTML = `${soma / contador} °C`;
+            
+            obterDados(lm35TemperaturaFria, '/4/lm35/temperatura');
+            media4.innerHTML = `${soma / contador} °C`;
+
+            obterDados(lm35TemperaturaQuente, '/5/lm35/temperatura');
+            media5.innerHTML = `${soma / contador} °C`;
+            
+            obterDados(chave, '/1/chave');
+
+            obterDados(chaveCongelante, '/2/chave');
+
+            obterDados(chaveDerretendo, '/3/chave');
+            
+            obterDados(chaveFria, '/4/chave');
+            
+            obterDados(chaveQuente, '/5/chave');
+        }, 1000);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../Vetores/icone.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/Vac_Sense.css">
+
+    <title>VacSense</title>
+</head>
+
+
+<body>
+    <aside class="aside-navbar">
+        <div class="aside-div-navbar">
+            <a href="#home">
+                <img class="arrow" src="../Vetores/seta.png" alt="">
+            </a>
+        </div>
+    </aside>
+
+    <div id="fade"></div>
+    <div class="alling_floating">
+        <button onclick="open_modal()" class="floating">$ Faça seu Orçamento</button>
+    </div>
+
+    <div id="div_alert"
+        style=" display: flex !important; z-index: 99999; align-items: center; justify-content: center;position: absolute; left: 38%;">
+    </div>
+
+    <!-- página 1 vacsense  -->
+    <!-- header -->
+    <div id="home" class="fundo" style="margin-bottom: -20px;">
+        <div class="header">
+            <div class="container">
+                <a href="../Monitor Health + VacSense/Monitor_Health.html"><img src="../Vetores/monitor-vac.svg" width="250px" class="logo"></a>
+                <ul class="navbar">
+                    <li><a href="../index.html">Página Inicial</a></li>
+                    <li><a href="../Vac_Sense.html">VacSense</a></li>
+                    <li><a href="../Simulador_Financeiro.html">Simulador</a></li>
+                    <li><a href="../Cadastro.html">Cadastro</a></li>
+                    <li><a href="https://monitorhealthatendimento.freshdesk.com/support/home">Suporte</a></li>
+                    <a href="../Login.html"><button class="botao_cliente">Área do Cliente</button></a>
+
+                </ul>
+            </div>
+        </div>
+    </div><br><br><br>
+    <!-- fim header -->
+
+    <main style="margin-bottom: -85px;">
+        <section class="home" style="margin-top: -40px; background-color: #bdcedb;">
+            <div class="main-section-home">
+                <img src="../Vetores/icon_conexao.svg" width="350px"
+                    style="margin-left: -25px; margin-top: 30px; margin-bottom: 10px;"><br>
+                <img class="background-home" src="../Vetores/vetor_medicamentos.svg">
+            </div>
+            <aside>
+                <div style="margin-left: -700px;">
+                    <h1 class="title-home">A solução que você precisa!</h1>
+                    <p class="text-home">
+                        Garanta o melhor cuidado dos seus insumos da área de saúde com uma solução eficiente e de
+                        tecnologia
+                        avançada. </p>
+                    <p class="text-home">Otimize dados, relatórios e economize com mão de obra com o auxílio do
+                        dispositivo
+                        VacSense.
+                    </p>
+                </div>
+                <div style="margin-left: -550px;">
+                    <div class="budget-home">
+                        <button onclick="open_modal()" class="botao_cliente">Faça um orçamento</button>
+
+                        <img class="calculator-home" src="../Vetores/orçamento.svg" style="margin-left: -15px;">
+                    </div>
+                </div><br><br>
+            </aside>
+    </main>
+
+    <div>
+        <img src="../Vetores/icon_conexao_esquerda.svg" width="350px" style="margin-left: 1025px; margin-top: -40px;">
+    </div><br><br><br>
+
+    <div id="about"
+        style=" width: auto; height: 800px; display: flex; align-items: center; justify-content: center; background-color: white; ">
+
+        <div style="margin-top: -50px; margin-bottom: 60px;">
+            <div style="margin-top: -150px;">
+                <div>
+                    <img src="../Vetores/vetor_tech.svg" width="350px" style="margin-left: -15px; margin-top: 170px; ">
+                </div><br><br>
+                <h1 class="title-benefits" style="margin-bottom: -80px;">Benefícios</h1>
+            </div>
+            <div class="content-benefits">
+                <div style="margin-bottom: -30px;">
+                    <div id="box1" class="box1">
+                        <p class="box1-text">
+                            1. Evita prejuízos com o armazenamento inadequado de medicamentos termolábeis, como vacinas.
+
+                        </p>
+                    </div>
+                    <div id="box2" class="box2">
+                        <p class="box2-text">
+                            2. Faz o monitoramento da temperatura dos equipamentos de refrigeração e da umidade dos
+                            ambientes, evitando que os medicamentos percam a eficiência.
+
+                        </p>
+                    </div>
+                    <div id="box3" class="box3">
+                        <p class="box3-text">
+                            3. Reduz perdas de produtos, por meio de tomada de decisões em tempo real em caso de falhas
+                            nos
+                            equipamentos.
+
+                        </p>
+                    </div>
+                </div>
+                <div id="box4" class="box4">
+                    <p class="box4-text">
+                        4. Monitora e emite alertas de abertura e fechamento 24hrs por dia.
+                    </p>
+                </div>
+                <div id="box5" class="box5">
+                    <p class="box5-text">
+                        5. Cumpre exigências da Anvisa, de acordo com a RDC Nº 430, de 8 de Outubro de 2020, que dispõe
+                        sobre as Boas Práticas de Distribuição, Armazenagem e de Transporte de Medicamentos.
+                    </p>
+                </div>
+                <div id="box6" class="box6">
+                    <p class="box6-text">
+                        6. Maior satisfação dos profissionais, por não terem que executar tarefas repetitivas e manuais.
+                    </p>
+                </div>
+            </div>
+            <!-- <div style="width: 600px; margin-left: 120px; margin-bottom: -230px;">
+                    <img src="../Vetores/icon_conexao_esquerda.svg" width="350px" style="margin-left: 430px; ">
+                </div> -->
+
+        </div>
+
+        <div>
+            <img src="../Vetores/img_vacina2.svg" width="480px" height="800px"
+                style="margin-left: 533px; margin-bottom: -33px; margin-top: -30px;">
+        </div>
+    </div>
+
+    <div style="margin-left: 90px; margin-top: -90px;">
+        <img src="../Vetores/icon_tec_cortado.svg" width="350px" style="margin-left: 430px; ">
+    </div><br>
+
+    <main>
+        <section id="diagram" class="diagram">
+            <div>
+                <img src="../Vetores/diagrama.svg">
+            </div>
+        </section>
+    </main>
+
+    <div style="background-color: white; width: auto; height: 50px; margin-top: -5px;">
+
+        <!-- <a href="../Monitor Health + VacSense/Monitor_Health.html">
+            <div class="botao_cliente"
+                style=" background-color: #1e3a4e; margin-left: 550px; width: 200px; height: 60px; border-radius: 50px; margin-top: 30px;">
+
+                <div style="margin-top: -20px; display: flex; justify-content: center; align-items: center;">
+                    <img src="../Vetores/logo_monitor_health_branco.svg" width="130px"
+                        style="margin-top: 25px; margin-left: 3px;">
+                </div>
+
+            </div>
+        </a> -->
+    </div>
+
+
+    <!-- footer  -->
+    <footer id="footer" style="background-color: #BDCEDB; width: auto; height: 310px;"><br>
+        <div style="display: flex; align-items: center;">
+            <div style="margin-left: 260px;">
+                <div style="line-height: 5px;">
+                    <h3 style="color: #1a3444;">Menu</h3><br>
+                    <div style="color: #ffffff; margin-top: -10px; margin-bottom: 30px;">
+                        <a href="../index.html"><p>Página Inicial</p></a>
+                        <a href="../index.html"><p>Tecnologias</p></a>
+                        <a href="../Vac_Sense.html"><p>VacSense</p></a>
+                        <a href="../Simulador_Financeiro.html"><p>Simulador</p></a>
+                        <a href="../Cadastro.html"><p>Cadastro</p></a>
+                    </div>
+                </div>
+                <div>
+                    <a href="../index.html"><img src="../Vetores/monitor_logo_azul.png" width="200x"></a>
+                </div>
+            </div>
+
+            <div style="margin-left: 250px;">
+                <div style="line-height: 5px;">
+                    <h3 style="color: #1a3444;">Endereço</h3><br>
+                    <div style="display: flex; align-items: center; margin-top: -10px;">
+                        <div> <img src="../Vetores/localização.png" width="20px"></div>
+                        <div>
+                            <p style="color: #ffffff; margin-left: 10px;">Rua Haddock Lobo, 595 São Paulo - SP</p>
+                        </div>
+                    </div>
+
+                    <h3 style="color: #1a3444;">Contato</h3><br>
+                    <div style="display: flex; align-items: center; margin-top: -10px;">
+                        <div> <img src="../Vetores/telefone.png" width="18px"></div>
+                        <div>
+                            <p style="color: #ffffff; margin-left: 10px;">(11) 2145-0400</p>
+                        </div>
+                    </div><br>
+                    <div style="display: flex; align-items: center; margin-top: -10px;">
+                        <div> <img src="../Vetores/email.png" width="25px"></div>
+                        <div>
+                            <p style="color: #ffffff; margin-left: 10px;">atendimentomonitorhealth@gmail.com</p>
+                        </div>
+                    </div>
+
+
+                    <h3 style="color: #1a3444;">Redes Sociais</h3><br>
+                    <div style="display: flex; align-items: center; margin-top: -10px;">
+                        <div> <img src="../Vetores/facebook.png" width="30px"></div>
+                        <div> <img style=" margin-left: 10px;" src="../Vetores/instagram.png" width="30px"></div>
+                        <div> <img style=" margin-left: 10px;" src="../Vetores/linkedin.png" width="30px"></div>
+                        <h5 style="color: #1e3a4e; margin-left: 250px;">© 2023 Monitor Health</h5>
+                    </div><br>
+                </div>
+</body>
+</html>
+<script src="./js/funcoes.js"></script>
+<script>
+    function open_modal(){
+    fade.innerHTML = `
+    <div class="hide">
+    <div class="hide2">
+
+        <div class="modal" style="margin-top: 15px;">
+            <button onclick="close_modal()" style=" margin-left: 330px; width: 20px; height: 20px; border-radius: 50%; border: none; background-color: #1e3a4e; cursor: pointer; color: white;">X</button>
+        
+        <h2 style="margin-left: 10px;" class="modal-header">Orçamento</h2>
+        
+        <p class="modal-body">Peça seu orçamento e vamos entrar em contato o mais rápido possível!</p>
+    
+
+        <form>
+        <input id="input_responsavel" type="name" class="colocar" placeholder="Nome do Responsável"><br>
+        <input id="input_empresa" type="name" class="colocar" placeholder="Nome da Empresa"><br>
+        <input id="input_telefone" type="number" class="colocar" placeholder="Telefone"><br>
+        <input id="input_email" type="e-mail" class="colocar" placeholder="E-mail"><br>
+        </form>
+        
+        <button onclick="sendMail()" class="floating">Peça seu orçamento</button>
+    </div>
+    </div>
+</div>
+    `
+}
+
+function close_modal(){
+    fade.innerHTML = " "
+}
+
+function alert_modal(){
+    alert("Orçamento enviado com sucesso!")
+    fade.innerHTML = " "
+}
+</script>

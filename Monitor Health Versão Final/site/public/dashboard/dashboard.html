@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src2/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/png" href="../Vetores/icone.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Área do Cliente</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="menu-top">
+                <li>
+                    <img class="logo"
+                        src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/logo_vacsense%20SEM%20FUNDO.png?raw=true"
+                        alt="Logo">
+                </li>
+                <li>
+                    <a href="dashboard.html">
+                        <img class="icon"
+                            src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/icone_grafico.svg?raw=true"
+                            alt="Dashboard">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="cadastrar_usuarios.html">
+                        <img class="icon"
+                            src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/icone_usuario.svg?raw=true"
+                            alt="Usuários">
+                        Usuários
+                    </a>
+                </li>
+            </ul>
+            <ul class="menu-bottom">
+                <li>
+                    <a href="#" onclick="limparSessao()">
+                        <img class="icon"
+                            src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/icone_sair.svg?raw=true"
+                            alt="Sair">
+                        Sair
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- <main> tag HTML que indica o conteúdo principal de uma página -->
+    <main class="container">
+        <div class="dash">
+            <header>
+                <div>
+                    <h1>Dashboard</h1>
+                    <select name="local" id="input_freezer">
+                        <option value="" disabled selected>Selecione o Ambiente</option>
+                        <option selected value="1">Freezer 1</option>
+                        <option value="2">Freezer 2</option>
+                        <option value="3">Freezer 3</option>
+                        <option value="4">Freezer 4</option>
+                        <option value="5">Freezer 5</option>
+                    </select>
+                </div>
+                <small class="date" id="dataAtual">17/04/2023 - 12:06:23</small>
+            </header>
+            <div class="graphs">
+                <div class="first-graph">
+                    <div class="pricipal-content">
+                        <div class="indicators">
+                            <div class="indicator" id="indicator_current_temp">
+                                <div class="information">
+                                    <small>
+                                        Temperatura (°C)
+                                        <span>Atual</span>
+                                    </small>
+                                    <span id="current_temp" class="measurement"></span>
+                                </div>
+                                <img class="indicator-icon"
+                                    src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/icone_termometro.svg?raw=true"
+                                    alt="Termometro">
+                            </div>
+                            <div class="indicator" id="indicator_avg_temp">
+                                <div class="information">
+                                    <small>
+                                        Temperatura (°C)
+                                        <span>Média</span>
+                                    </small>
+                                    <span id="avg" class="measurement"></span>
+                                </div>
+                                <img class="indicator-icon"
+                                    src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/icone_termometro.svg?raw=true"
+                                    alt="Termometro">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart">
+                        <h3 class="label">Temperatura (°C)</h3>
+                        <canvas style="position: relative; height: 50vh; width: 30vw;" id="first_chart"></canvas>
+                    </div>
+                </div>
+                <div class="second-graph">
+                    <div class="chart">
+                        <h3 class="label">Temperatura X Abertura</h3>
+                        <canvas style="position: relative; height: 50vh; width: 30vw;" id="second_chart"></canvas>
+                    </div>
+                    <div class="pricipal-content">
+                        <div class="indicators">
+                            <div class="indicator normal">
+                                <div class="information">
+                                    <small>
+                                        Tempo (mm:ss)
+                                        <span>Tempo aberto (Dia)</span>
+                                    </small>
+                                    <span id="measurement" class="measurement"></span>
+                                </div>
+                                <img class="indicator-icon"
+                                    src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/icone_floco_neve.svg?raw=true"
+                                    alt="Termometro">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="profile">
+            <img class="photo" src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/foto_perfil.svg?raw=true"
+                alt="Foto de Perfil">
+            <div class="description">
+                <h3 class="profile-name" id="profile-name">Olá, Thaisa</h3>
+                <small id="permission">Administrador</small>
+            </div>
+            <hr class="line">
+            <div class="notification">
+                <span class="notification-text">Faixas</span>
+                <img class="icon"
+                    src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/icone_notifica%C3%A7%C3%A3o.svg?raw=true"
+                    alt="">
+            </div>
+            <div>
+                <img style="margin-top: 15px;" width="280px" src="https://github.com/Monitor-Health/Vetores-Projeto2/blob/main/Menor%202%C2%B0%20(1).jpg?raw=true" alt="">
+                <img style="margin-top: 5px; margin-left: 10px;" width="260px" src="../Vetores/gatuno.png" alt="">
+            
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/funcoes.js"></script>
+    <script src="src2/index.js"></script>
+</body>
+
+</html>

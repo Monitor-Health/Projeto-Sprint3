@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src2/Analytics.css">
+    <link rel="icon" type="image/png" href="../Vetores/icone.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Área do Cliente</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="menu-top">
+                <li>
+                    <img class="logo"
+                        src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/logo_vacsense%20SEM%20FUNDO.png?raw=true"
+                        alt="Logo">
+                </li>
+                <li>
+                    <a href="dashboard.html">
+                        <img class="icon"
+                            src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/icone_grafico.svg?raw=true"
+                            alt="Dashboard">
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="./Analytics.html">
+                        <img class="icon"
+                            src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/icone_analytics.svg?raw=true"
+                            alt="Analytics">
+                        Analytics
+                    </a>
+                </li>
+                <li>
+                    <a href="cadastrar_usuarios.html">
+                        <img class="icon"
+                            src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/icone_usuario.svg?raw=true"
+                            alt="Usuários">
+                        Usuários
+                    </a>
+                </li>
+            </ul>
+            <div>
+                <img src="../Vetores/alertas.jpg" width="250px">
+            </div>
+            <ul class="menu-bottom">
+                <li>
+                    <a href="#">
+                        <img class="icon"
+                            src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/icone_config.svg?raw=true"
+                            alt="Configurações">
+                        Configurações
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="limparSessao()">
+                        <img class="icon"
+                            src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/icone_sair.svg?raw=true"
+                            alt="Sair">
+                        Sair
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- <main> tag HTML que indica o conteúdo principal de uma página -->
+    <main class="container" style="height: 880px;">
+        <div class="dash">
+            <header>
+                <div>
+                    <h1>Analytics</h1>
+                    <select name="local" id="">
+                        <option value="" disabled selected>Selecione o Ambiente</option>
+                        <option selected value="">Freezer 1</option>
+                        <option value="">Freezer 2</option>
+                        <option value="">Freezer 3</option>
+                    </select>
+                </div>
+                <small class="date" id="dataAtual">17/04/2023 - 12:06:23</small>
+            </header>
+            <div>
+                <div style="margin-top: 25px; display: flex; align-items: center; justify-content: start;">
+                    <img src="https://raw.githubusercontent.com/Monitor-Health/Vetores_Dash/92bd01ccd4d01056b44fc2a5d0341ef4f7f4edbc/calend%C3%A1rio.svg"
+                        width=40px alt="Calendário" style="margin-right: 10px;">
+                    <input class="tag_input" style="padding: 7px;" type="month">
+                </div>
+
+            </div>
+            <div class="graphs">
+                <div style="margin-top: -60px;" class="first-graph">
+                    <div class="pricipal-content">
+                        <div class="indicators">
+                            <div style="background-color: #9EB7C2;" class="indicator success">
+                                <div class="information">
+                                    <small>
+                                        <span>Menor</span>
+                                        Temperatura (°C)
+                                    </small>
+                                    <span class="measurement">2,1°</span>
+                                </div>
+                                <img class="indicator-icon"
+                                    src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/icone_termometro.svg?raw=true"
+                                    alt="Termometro">
+                            </div>
+                            <div class="indicator warning">
+                                <div class="information">
+                                    <small>
+                                        <span>Maior</span>
+                                        Temperatura (°C)
+                                    </small>
+                                    <span class="measurement">6,0°</span>
+                                </div>
+                                <img class="indicator-icon"
+                                    src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/icone_termometro.svg?raw=true"
+                                    alt="Termometro">
+                            </div>
+                            <div class="indicator success">
+                                <div class="information">
+                                    <small>
+                                        <span>Média</span>
+                                        Temperatura (°C)
+                                    </small>
+                                    <span class="measurement">4,1°</span>
+                                </div>
+                                <img class="indicator-icon"
+                                    src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/icone_termometro.svg?raw=true"
+                                    alt="Termometro">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart">
+                        <h3 class="label">Aberturas/ Fechamentos</h3>
+                        <canvas id="Status_Geladeira" style="position: relative; height:10vh; width:15vw"></canvas>
+                    </div>
+                </div>
+
+                <div style="margin-top: -50px; display: flex; align-items: center; justify-content: start;">
+                    <img src="https://raw.githubusercontent.com/Monitor-Health/Vetores_Dash/92bd01ccd4d01056b44fc2a5d0341ef4f7f4edbc/calend%C3%A1rio.svg"
+                        width=40px alt="Calendário" style="margin-right: 10px;">
+                    <input class="tag_input" style="padding: 7px;" type="number" min="1950" max="2070"
+                        placeholder="Ano">
+                </div>
+
+
+                <div class="second-graph">
+                    <div class="chart">
+                        <h3 class="label">Temperatura x Abertura</h3>
+                        <canvas id="tempXaberturaAnual" style=" position: relative; height:12vh; width:20vw"></canvas>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="profile" style="height: 880px;">
+            <img class="photo" src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/foto_perfil.svg?raw=true"
+                alt="Foto de Perfil">
+            <div class="description">
+                <h3 class="profile-name">Olá, Thaisa</h3>
+                <small>Administrador</small>
+            </div>
+            <hr class="line">
+            <div class="notification">
+                <span class="notification-text">Notificações</span>
+                <img class="icon"
+                    src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/icone_notifica%C3%A7%C3%A3o.svg?raw=true"
+                    alt="">
+            </div>
+            <div class="alerts">
+                <div class="alert success">
+                    <div class="content">
+                        <small>
+                            <span>Alerta</span>
+                            Freezer 2 está na faixa Ideal
+                        </small>
+                    </div>
+                    <img class="icon"
+                        src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/icone_alerta.svg?raw=true"
+                        alt="Alerta Ideal">
+                </div>
+                <div class="alert warning">
+                    <div class="content">
+                        <small>
+                            <span>Alerta</span>
+                            Freezer 2 está na faixa quente
+                        </small>
+                    </div>
+                    <img class="icon"
+                        src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/icone_alerta.svg?raw=true"
+                        alt="Alerta Quente">
+                </div>
+                <div class="alert danger">
+                    <div class="content">
+                        <small>
+                            <span>Alerta</span>
+                            Freezer 2 está na faixa emergência
+                        </small>
+                    </div>
+                    <img class="icon"
+                        src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/icone_alerta.svg?raw=true"
+                        alt="Alerta Emergência">
+                </div>
+                <div class="alert freezing">
+                    <div class="content">
+                        <small>
+                            <span>Alerta</span>
+                            Freezer 2 está na faixa congelante
+                        </small>
+                    </div>
+                    <img class="icon"
+                        src="https://github.com/Monitor-Health/Vetores_Dash/blob/main/icone_alerta.svg?raw=true"
+                        alt="Alerta Congelante">
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./src2/Analytics.js"></script>
+</body>
+
+</html>
+<script>
+    const dataAno = new Date()
+    const dia = String(dataAno.getDate()).padStart(2, '0')
+    const mes = String(dataAno.getMonth() + 1).padStart(2, '0')
+    const ano = dataAno.getFullYear()
+    const hora = String(dataAno.getHours()).padStart(2, '0')
+    const minutos = String(dataAno.getMinutes()).padStart(2, '0')
+    const segundos = String(dataAno.getSeconds()).padStart(2, '0')
+    dataAtual.innerHTML = `${dia}/${mes}/${ano} - ${hora}:${minutos}:${segundos}`
+
+    window.addEventListener("DOMContentLoaded", () => {
+        if (sessionStorage.length == 0) {
+            window.location = "../index.html";
+        }
+    })
+</script>
+<script src="../js/funcoes.js"></script>

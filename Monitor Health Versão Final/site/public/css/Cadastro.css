@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+
+body {
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+        font-family: 'Montserrat', sans-serif;
+        color: #3e3e3e;
+    }
+
+html {
+        scroll-behavior: smooth;
+    }
+
+    .hide {
+        background-color: #ffffff66;
+        font-family: 'Montserrat', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+    }
+    
+    .hide2 {
+        margin-top: 10px;
+        background-color: rgb(255, 255, 255);
+        width: 400px;
+        height: 450px;
+        border-radius: 40px;
+    }
+    
+    .botao_orcamento1 {
+        background-color: #1e3a4e;
+        border-radius: 33px;
+        border: 0;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-size: 15px;
+        padding: 15px 25px;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        margin-top: 5px;
+    }
+    
+    .colocar {
+        width: 70%;
+        margin: 0 auto;
+        padding: 10px;
+        border: none;
+        margin-bottom: 10px;
+        border-radius: 40px;
+        margin-top: 5px;
+        background-color: #e1e1e1;
+    
+    }
+    
+    .modal {
+        text-align: center;
+        margin-top: 40px;
+    }
+    
+    .modal-header {
+        color: #1e3a4e;
+    }
+    
+    .modal-body {
+        color: rgb(52, 52, 52);
+    }
+    
+    .alling_floating{
+        display: flex;
+        justify-content: end;
+        align-items: end;
+        position: fixed;
+        bottom: 13px;
+        right: 80px;
+    }
+    
+    .floating {
+    background-color: #1e3a4e;
+    border-radius: 33px;
+    border: 0;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    }
+
+    .fundo {
+        background-color: #ffffff;
+    }
+
+    .container{
+        width: 80%;
+        margin: auto;
+        display: flex;
+    }
+
+    .header .container {
+        justify-content: space-between;
+    }
+
+    .header a {
+        text-decoration: none;
+        color: #1e3a4e;
+    }
+
+    .agora {
+        font-weight: 800;
+    }
+
+    .logo {
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px
+    }
+
+    .navbar {
+        width: 900px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style: none;
+        color: #1e3a4e;
+    }
+
+    .botao_cliente {
+        background-color: #1e3a4e;
+        border-radius: 33px;
+        border: 0;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-size: 15px;
+        padding: 15px 25px;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .botao_cliente:hover {
+        background-color: #3e3e3e2d;
+        transition: .3s;
+        color: rgb(57, 57, 57);
+        opacity: .4;
+    }
+    .botao:hover {
+        background-color: #3e3e3e2d;
+        transition: .3s;
+        color: rgb(57, 57, 57);
+        opacity: .4;
+    }
+
+    a{
+        text-decoration: none;
+        color: #ffffff;
+        transition: all 0.2s linear;
+    }
+    
+    a:hover{
+        color: #27506d;
+        transition: .3s;
+    }
+
+    .centro {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+        margin-top: -15px;
+    }
+    
+    .container2{
+        background-color: #fafafa;
+        width: 80%;
+        height: 500px;
+        border-radius: 30px;
+        display: flex;
+        box-shadow: 52px 44px 79px -41px rgba(184,184,184,1);
+    
+    }
+    
+    .cadastrar{
+        background-color: #BDCEDB;
+        width: 450px;
+        height: 500px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+    
+    .centro_logo{
+        margin-left: 90px;
+    }
+    
+    
+    .texto_cadastrado{
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-size: smaller;
+    }
+    
+    .logo2{
+        margin-top: 120px;
+        margin-bottom: -8px;
+    }
+    
+    .botao{
+        background-color: #1e3a4e;
+        border-radius: 33px;
+        border: 0;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-size: 13px;
+        padding: 10px 25px;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    
+    .input {
+        width: auto;
+        margin: 0 auto;
+        padding: 10px;
+        border: none;
+        margin-bottom: 10px;
+        border-radius: 40px;
+        background-color: #E8E8E8;
+        margin-top: 7px;
+    }
+
+    .centro_cadastro{
+        width: auto;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    } 
+
+    .engloba{
+        margin-left: 25px;
+    }
+
+      .bem_vindo {
+        width: auto;
+        height: 400px;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .fundo_bem_vindo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 300px;
+        background-color: #fafafa;
+        border-radius: 40px;
+    }
